@@ -50,7 +50,7 @@ This forces the removal of the container, even if it is currently running.
 ## Solution
 ```
 GOOS=linux go build
-docker build -t ezhai24/lab-exercise-2
+docker build -t ezhai24/lab-exercise-2 .
 docker run -d -e PORT=4000 -p 4000:4000 ezhai24/lab-exercise-2
 ```
 To do multiple enivronment variables: `-e NAME=value -e NAME=value ...`
