@@ -41,3 +41,12 @@ You can also stop and remove a running container in one command:
 `docker rm -f <container-id>`
 
 This forces the removal of the container, even if it is currently running.
+
+## Solution
+```
+(docker login)
+GOOS=linux go build
+docker build -t ezhai24/lab-exercise-1 .
+(docker images)
+docker run -d -p 4000:4000 ezhai24/lab-exercise-1
+```
