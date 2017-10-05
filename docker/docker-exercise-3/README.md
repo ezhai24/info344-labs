@@ -48,3 +48,15 @@ Remember that you can also stop and remove a running container in one command:
 `docker rm -f <container-id>` or `docker rm -f <container-name>`
 
 This forces the removal of the container, even if it is currently running.
+
+## Solution
+```
+GOOS=linux go build
+docker build -t ezhai24/lab-exercise-3 .
+docker run -d \
+-e PORT=4000 -e FILEPATH=/secret/secret-message.txt \
+-p 4000:4000 \
+-v $(pwd)/secret/:/secret/:ro \
+ezhai24/lab-exercise-3
+```
+Mounting volumes: `/absolute/host/path/:/absolute/docker/path/:ro`
